@@ -4,10 +4,105 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>anime-hub-vite-app</title>
+    <title>Anime Hub</title>
+    <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <h1 id="header-title">Anime Hub</h1>
+      <p id="header-statement">Add anime to your list!</p>
+    </header>
+
+    <main>
+      <!-- Featured Section/Anime recommendation -->
+      <section id="featured-section">
+        <h2>Anime Recommendation</h2>
+        <div id="featured-anime">
+        <img src="" alt="Fullmetal Alchemist: Brotherhood">
+        <div class="featured-info">
+          <h3>Fullmetal Alchemist: Brotherhood</h3>
+          <div class="featured-meta">
+            <span class="score">Score: 9.1</span>
+            <span>Episodes: 64</span>
+            <span>Genres...</span>
+            <span>Status</span>
+          </div>
+          <p class="featured-synopsis">
+            Brothers Edward and Alphonse Elric search for the Philsopher's Stone, hoping to restore their bodies, which were lost when they attempted to use their alchemy skills to resurrect their deceased mother. Edward, who lost only limbs, joins the State Military, which gives him the freedom to continue the search as he tries to restore his brother, whose soul is tethered to earth by a suit of armor. However, Edward and Alphonse are not the only ones seeking the powerful stone. And as they search, they learn of a plot to transmute the entire country for reasons they cannot comprehend.
+          </p>
+          <button class="add-btn" data-anime-id="">Add to Watched</button>
+        </div>
+      </div>
+      <button id="get-another-btn">Get Another Recommendation</button>
+      </section>
+
+      <!-- Search Section -->
+      <section id="search-section">
+        <div id="search-content">
+          <h2>Search Anime</h2>
+          <form id="search-form">
+            <div>
+              <label for="search-query">Search by Title</label>
+              <input type="text" id="search-query" placeholder="Search anime..." name="query" required>
+            </div>
+            <button type="submit">Search</button>
+          </form>
+
+          <!-- Search results -->
+          <div id="search-results">
+            <h3>Search Results (<span class="count">0</span>)</h3>
+            <ul id="results-list">
+              <li>
+                <img src="" alt="">
+                <div class="anime-info">
+                  <h4>Anime name</h4>
+                  <p>Score: </p>
+                  <p>Episodes</p>
+                  <p>Status</p>
+                </div>
+                <button class="add-btn">Add to Watched</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+       <!-- Watched Anime Section -->
+       <section id="watched-section">
+        <h2>My Watched Anime(<span class="count">0</span>)</h2>
+        <ul id="watched-list">
+          <!-- Will be added with DOM -->
+        </ul>
+       </section>
+
+       <!-- Modal Section -->
+        <section id="modal-section" class="hidden">
+          <div class="modal-content">
+            <h3>Add to Watched List</h3>
+            <p id="modal-anime-title"></p>
+            <form id=add-form>
+              <div>
+                <label for="rating">Your Rating (1-10)</label>
+                <input type="number" id="rating" name="rating" min="1" max="10" required>
+              </div>
+              <div>
+                <label for="notes">Your Notes/Review</label>
+                <textarea name="notes" id="notes" rows="4" placeholder="Your thoughts"></textarea>
+              </div>
+
+              <!-- Modal Buttons -->
+               <div class="modal-buttons">
+                <button type="submit">Add to List</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+               </div>
+            </form>
+          </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
